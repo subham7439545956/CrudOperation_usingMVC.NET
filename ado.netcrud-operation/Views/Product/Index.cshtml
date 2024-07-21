@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ado.netcrud_operation.Models.products>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mfg_com)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.batch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expiry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pkg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.productName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mfg_com)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.batch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expiry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pkg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.productid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.productid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.productid })
+        </td>
+    </tr>
+}
+
+</table>
